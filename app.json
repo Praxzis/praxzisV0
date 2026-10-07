@@ -1,0 +1,90 @@
+{
+  "expo": {
+    "name": "Praxzis",
+    "slug": "praxzis",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "praxzis",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.praxzis.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleDisplayName": "Praxzis",
+        "NSCameraUsageDescription": "Praxzis uses the camera to photograph a line from the book.",
+        "NSPhotoLibraryUsageDescription": "Praxzis uses a photo of the page so you can crop the sentence instead of typing it."
+      }
+    },
+    "android": {
+      "package": "com.praxzis.app",
+      "label": "Praxzis",
+      "adaptiveIcon": {
+        "backgroundColor": "#F6F0E3",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "category": ["BROWSABLE", "DEFAULT"],
+          "data": [
+            {
+              "scheme": "praxzis",
+              "host": "auth",
+              "pathPrefix": "/callback"
+            }
+          ]
+        }
+      ]
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "./plugins/without-apple-signin-entitlement",
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F6F0E3",
+          "image": "./assets/brand/splash.png",
+          "imageWidth": 180,
+          "dark": {
+            "backgroundColor": "#1B2131",
+            "image": "./assets/brand/splash.png"
+          }
+        }
+      ],
+      "expo-sqlite",
+      "expo-dev-client",
+      [
+        "expo-web-browser",
+        {
+          "experimentalLauncherActivity": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Praxzis uses a photo of the page so you can crop the sentence instead of typing it.",
+          "cameraPermission": "Praxzis uses the camera to photograph a line from the book.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e1ab44bc-f8ef-4e9e-9126-b139a0a0c3aa"
+      }
+    }
+  }
+}
